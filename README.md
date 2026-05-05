@@ -1,7 +1,7 @@
 # VAVA Server
 
 VAVA Cam pro 云服务本地开发项目，提供基站/摄像头的设备注册、认证、消息推送、P2P 打洞、RTMP 直播流转发等 IoT 云服务能力。
-<br>项目已开始用的gpt分析的，后面用deepseek v4重新梳理了下。
+<br>项目一开始用的gpt分析的，后面用deepseek v4重新梳理了下。
 <br>需要把相关域名解析到本地服务器上
 ```bash
 iot-api.sunvalleycloud.com
