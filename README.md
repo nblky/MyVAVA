@@ -37,6 +37,7 @@ bash scripts/start_project.sh full
 bash scripts/start_project.sh fastapi
 ```
 
+
 启动后访问：
 
 - API 服务：`http://127.0.0.1:18080`
@@ -89,3 +90,9 @@ SAN 覆盖域名：`*.sunvalleycloud.com`、`sunvalleycloud.com`、`*.vava.com`�
 - 流程：`fake_cloud_app/docs/FLOWS.md`
 - 重构计划：`fake_cloud_app/docs/REFACTOR_PLAN.md`
 - 代码地图：`docs/CLOUD_PLATFORM_CODEMAP.md`
+
+## Imgs
+<img width="1179" height="2556" alt="75ffd38e18d72db3fcf0f69774c2f760" src="https://github.com/user-attachments/assets/cab16124-8465-4dcf-b8f6-c1afdcb0fac6" />
+<img width="1179" height="2556" alt="e7863e4fa0e1efeee16fd72584ccba14" src="https://github.com/user-attachments/assets/fcb015f9-1331-470f-81b7-f5db0fa8ce62" />
+<img width="1179" height="2556" alt="b16475af9fb79d83f4326a888b6b691d" src="https://github.com/user-attachments/assets/4dccc6c3-43ca-466a-9a27-e64a065744f6" />
+<img width="1179" height="2556" alt="0e51f135d6f41d14c8e41378437ede43" src="https://github.com/user-attachments/assets/718bf2a2-48d1-431b-a15d-56a436ba93f8" />
