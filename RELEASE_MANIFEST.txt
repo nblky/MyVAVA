@@ -1,0 +1,31 @@
+Package: vava-server-20260415_140741
+BuiltAt: 2026-04-15 14:07:34 +0800
+RootDir: /Users/lky-mm/vava-server
+
+[Included paths]
+- .env.example
+- README.md
+- requirements.txt
+- mediamtx-vava.yml
+- LIVE_DELIVERY_NOTES.md
+- VAVA_APP_DOMAIN_LIST.md
+- app
+- bin
+- deploy
+- docs
+- fake_cloud_app
+- legacy
+- native
+- scripts
+
+[Excluded runtime/private paths]
+- .venv/
+- data/*
+- logs/*
+- run/*
+- legacy/cert_backups/
+- legacy/sunvalley_local_root_ca.key
+- legacy/*.srl
+- __pycache__/
+- *.pyc
+- .DS_Store

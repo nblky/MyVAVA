@@ -1,0 +1,17 @@
+[req]
+default_bits = 2048
+default_md = sha256
+distinguished_name = dn
+x509_extensions = v3_ca
+prompt = no
+
+[dn]
+CN = VAVA Local Root CA
+O = VAVA Local Test
+OU = Local Cloud
+
+[v3_ca]
+basicConstraints = critical, CA:TRUE, pathlen:1
+keyUsage = critical, keyCertSign, cRLSign
+subjectKeyIdentifier = hash
+authorityKeyIdentifier = keyid:always,issuer

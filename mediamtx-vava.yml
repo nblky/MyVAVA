@@ -1,0 +1,12 @@
+logLevel: debug
+logDestinations: [stdout]
+logStructured: false
+
+rtmp: true
+rtmpEncryption: "no"
+rtmpAddress: :1935
+
+paths:
+  all:
+    source: publisher
+    record: false

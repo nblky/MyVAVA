@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+.venv/
+
+# IDE
+.claude/
+.idea/
+.vscode/
+*.swp
+
+# macOS
+.DS_Store
+
+# Runtime data
+data/*
+!data/.keep
+logs/*
+!logs/.keep
+run/*
+!run/.keep
+
+# Generated TLS certificates (run scripts/regenerate_local_cert.sh on first setup)
+legacy/*.crt
+legacy/*.key
+legacy/*.srl

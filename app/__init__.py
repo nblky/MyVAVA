@@ -1,0 +1,1 @@
+"""VAVA server application package."""

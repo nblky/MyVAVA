@@ -1,0 +1,143 @@
+<section class="login-shell" id="login-screen">
+    <div class="login-card">
+      <div class="login-brand">
+        <div class="brand-badge" style="min-width:0;width:fit-content;">VAVA-云管理平台</div>
+        <h1>登录后进入监控台</h1>
+        <p>网页登录会复用你这套假云的账号体系。登录后，设备列表、消息、云录像和浏览器 live 都统一按同一账户视角进入。</p>
+      </div>
+
+      <form class="login-grid" id="login-form">
+        <div class="login-field">
+          <label for="login-account">账号</label>
+          <input id="login-account" name="account" type="text" autocomplete="username" value="local@vava.invalid">
+        </div>
+        <div class="login-field">
+          <label for="login-password">密码</label>
+          <input id="login-password" name="password" type="password" autocomplete="current-password" value="123456">
+        </div>
+        <div class="login-actions">
+          <button type="submit" class="action-btn" id="login-submit">登录</button>
+          <div class="topbar-pill" style="background:#eef2ff;color:#4f46e5;border-radius:12px;height:38px;">测试账号: `local@vava.invalid / 123456`</div>
+        </div>
+      </form>
+
+      <div class="login-note" id="login-status">
+        登录后仍然是服务端代拉基站 P2P，再分发给浏览器播放；不会让浏览器自己去跑 PPCS。
+      </div>
+    </div>
+  </section>
+
+  <main class="app-shell" id="monitor-app" hidden>
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-badge">VAVA-云管理平台</div>
+      </div>
+      <div class="topbar-center">
+        <div class="topbar-search" id="topbar-summary">本地假云状态已接入 · 浏览器按需拉起 P2P live</div>
+      </div>
+      <div class="topbar-actions">
+        <div class="topbar-pill" id="current-user">未登录</div>
+        <button type="button" class="topbar-btn" id="refresh-btn">刷新</button>
+        <button type="button" class="topbar-pill" id="toggle-auto-btn">自动刷新: 开</button>
+        <button type="button" class="topbar-btn" id="logout-btn">退出</button>
+      </div>
+    </header>
+
+    <div class="tabbar">
+      <div class="tab-links">
+        <button type="button" class="main-tab" data-tab="home">首页</button>
+        <button type="button" class="main-tab" data-tab="live">Live</button>
+        <button type="button" class="main-tab" data-tab="playback">回放</button>
+        <button type="button" class="main-tab" data-tab="messages">消息</button>
+        <button type="button" class="main-tab" data-tab="station">基站</button>
+      </div>
+      <div class="tabbar-fill"></div>
+    </div>
+
+    <section class="workspace">
+      <aside class="sidebar">
+        <div class="sidebar-card">
+          <div class="sidebar-head">
+            <div class="sidebar-title" id="sidebar-title">设备树</div>
+            <div class="sidebar-link" id="sidebar-context-label">当前账号视图</div>
+          </div>
+
+          <div class="sidebar-head" style="padding-top:2px;">
+            <div class="sidebar-link" id="sidebar-scope-label">本地假云 / 单基站</div>
+            <div class="sidebar-link">分屏: <span id="sidebar-split-label">4分屏</span></div>
+          </div>
+
+          <input class="device-search" id="device-filter" type="search" placeholder="输入设备或点位名称过滤">
+
+          <div class="tree-wrap" id="device-tree"></div>
+
+          <div class="sidebar-foot">
+            <div class="mini-kv" id="sidebar-station-quick"></div>
+            <div class="status-line" id="status-line">Loading monitor data...</div>
+          </div>
+        </div>
+      </aside>
+
+      <div class="content">
+        <div class="main-panel">
+          <div class="page-toolbar">
+            <div class="toolbar-left">
+              <div class="toolbar-title" id="page-title">Live</div>
+              <div class="split-select" id="toolbar-live-split"></div>
+            </div>
+            <div class="toolbar-center">
+              <div class="toolbar-status" id="toolbar-status"></div>
+            </div>
+            <div class="toolbar-right" id="toolbar-live-actions">
+              <button type="button" class="action-btn secondary" id="toggle-prewarm-btn">预热保活: 关</button>
+              <button type="button" class="action-btn secondary bulk-start-btn">可见全播</button>
+              <button type="button" class="action-btn secondary bulk-stop-btn">可见全停</button>
+            </div>
+          </div>
+
+          <div class="page" id="page-home">
+            <div class="metric-grid" id="home-metrics"></div>
+            <div class="detail-panel" id="home-focus"></div>
+            <div class="detail-panel" id="home-cameras"></div>
+          </div>
+
+          <div class="page is-active" id="page-live">
+            <div class="wall-grid split-4" id="wall-grid"></div>
+            <div class="detail-panel" id="live-detail"></div>
+          </div>
+
+          <div class="page" id="page-playback">
+            <div class="detail-panel" id="playback-list"></div>
+          </div>
+
+          <div class="page" id="page-messages">
+            <div class="list-grid">
+              <div class="detail-panel">
+                <div class="detail-head">
+                  <div>
+                    <h3>最近消息</h3>
+                    <div class="detail-sub">对应 App 的消息/通知入口。</div>
+                  </div>
+                </div>
+                <div id="message-list"></div>
+              </div>
+              <div class="detail-panel">
+                <div class="detail-head">
+                  <div>
+                    <h3>最近事件</h3>
+                    <div class="detail-sub">本地服务记录到的调试事件。</div>
+                  </div>
+                </div>
+                <div id="event-list"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="page" id="page-station">
+            <div class="detail-panel" id="station-detail"></div>
+            <div class="detail-panel" id="station-cameras"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>

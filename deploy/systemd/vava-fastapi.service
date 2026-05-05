@@ -1,0 +1,18 @@
+[Unit]
+Description=VAVA FastAPI backend
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=vava
+Group=vava
+WorkingDirectory=/opt/vava-server
+EnvironmentFile=/opt/vava-server/deploy/env/vava-server.env
+ExecStart=/opt/vava-server/scripts/linux/run_fastapi_prod.sh
+Restart=always
+RestartSec=2
+TimeoutStopSec=10
+
+[Install]
+WantedBy=multi-user.target
