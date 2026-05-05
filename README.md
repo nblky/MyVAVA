@@ -1,7 +1,26 @@
 # VAVA Server
 
 VAVA Cam pro 云服务本地开发项目，提供基站/摄像头的设备注册、认证、消息推送、P2P 打洞、RTMP 直播流转发等 IoT 云服务能力。
-项目已开始用的gpt分析的，后面用deepseek v4重新梳理了下。
+<br>项目已开始用的gpt分析的，后面用deepseek v4重新梳理了下。
+<br>需要把相关域名解析到本地服务器上
+```bash
+iot-api.sunvalleycloud.com
+h5.sunvalleycloud.com
+h5-dev.sunvalleycloud.com
+h5-test.sunvalleycloud.com
+mi-api-pro.sunvalleycloud.com
+mi-api-test.sunvalleycloud.com
+mi-api-sit.sunvalleycloud.com
+mi-api-demo.sunvalleycloud.com
+mi-api-uat.sunvalleycloud.com
+mqtt-server.sunvalleycloud.com
+mqtt-server-dev.sunvalleycloud.com
+mqtt-server-sit.sunvalleycloud.com
+mqtt-server-test.sunvalleycloud.com
+mqtt-server-demo.sunvalleycloud.com
+third-api-dev.sunvalleycloud.com
+storage.sunvalleycloud.com
+```
 ## 目录结构
 
 - `app/` — FastAPI 服务主程序，包含 API 路由、存储层、云平台业务逻辑
